@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+body {
+    font-family: 'Karla', sans-serif;
+    background: url("https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80") no-repeat center;
+    background-size:cover;
+    display:flex;
+    flex-direction:column;
+    justify-items:center;
+    align-items:center;
+    color:#444;
+
+}
+
+section.news {background-color: rgba(255,255,255,0.6);
+    padding:2%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+
+div.selectnews {
+    display:flex;
+    flex-direction:column;
+    justify-items:center;
+    align-items: center;
+}
+/*
+div.news_select_boxes {
+    display:flex;
+}
+*/
+
+
+
+a{
+    color:#444;
+    text-decoration:none;
+}
+.copyright {align-self:flex-start;
+padding:2%;}
+@media all and (max-width:675px){
+   body {
+        font-size:0.9rem;
+   }
+}
+@media all and (max-width:475px){
+    body {
+         font-size:0.8rem;
+    }
+ }
+ @media all and (max-width:275px){
+    body {
+         font-size:0.6rem;
+    }
+ }
