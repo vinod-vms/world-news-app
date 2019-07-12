@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {max-width:1200px;
+  font-family: 'Roboto', sans-serif;
+font-size:1.2em;}
+section.news {background-color: rgba(255,255,255,0.88);
+    border-radius:8%;
+    padding:2%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+
+div.selectnews {
+    display:flex;
+    flex-direction:column;
+    justify-items:center;
+    align-items: center;
+}
+
+div.news_select_boxes {
+    display:flex;
+}
+
+li {display:flex;
+  align-items:center;
+}
+.one, .two {padding:20px;}
+
+a {color:#555;}
+
+@media all and (max-width: 675px) {
+  
+  li {display:flex;
+  flex-direction:column;}
+  img {max-width:90vw;}
+}

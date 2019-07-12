@@ -10,7 +10,10 @@ body {
     color:#333;
 
 }
-
+i {background-color:red;
+color:#fff;
+padding:2px;
+font-style:italic;}
 
 section.news {background-color: rgba(255,255,255,0.88);
     border-radius:8%;
