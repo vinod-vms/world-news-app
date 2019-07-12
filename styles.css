@@ -10,9 +10,9 @@ body {
     color:#333;
 
 }
-i {background-color:red;
+i {background-color:blue;
 color:#fff;
-padding:2px;
+padding:3px;
 font-style:italic;}
 
 section.news {background-color: rgba(255,255,255,0.88);
