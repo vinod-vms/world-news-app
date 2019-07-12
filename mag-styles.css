@@ -35,7 +35,7 @@ li {display:flex;
 a {color:#555;}
 
 @media all and (max-width: 675px) {
-  
+  body {font-size:1rem;}
   li {display:flex;
   flex-direction:column;}
   img {max-width:90vw;}
