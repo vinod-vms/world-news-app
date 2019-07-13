@@ -54,7 +54,16 @@ padding: 0 25px;}
 @media all and (max-width: 400px) { 
 
     body {
+        font-size:0.8rem;
         max-width: 385px;
+        padding: 0 25px;
+    }
+}
+@media all and (max-width: 325px) { 
+
+    body {
+        font-size:0.8rem;
+        max-width: 315px;
         padding: 0 25px;
     }
 }
