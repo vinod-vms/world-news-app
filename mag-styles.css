@@ -55,15 +55,15 @@ padding: 0 25px;}
 
     body {
         font-size:0.8rem;
-        max-width: 385px;
+        max-width: 360px;
         padding: 0 25px;
     }
 }
 @media all and (max-width: 325px) { 
 
     body {
-        font-size:0.8rem;
-        max-width: 315px;
+        font-size:0.75rem;
+        max-width: 300px;
         padding: 0 25px;
     }
 }
