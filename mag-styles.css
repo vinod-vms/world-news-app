@@ -47,7 +47,11 @@ padding: 0 25px;}
 
     body {
         max-width: 560px;
-        padding: 0 25px;
+        padding: 0 10px;
+    }
+    ul {
+        max-width:98%;
+        
     }
 }
 
@@ -56,7 +60,11 @@ padding: 0 25px;}
     body {
         font-size:0.8rem;
         max-width: 360px;
-        padding: 0 25px;
+        padding: 0 10px;
+    }
+    ul {
+        max-width:98%;
+        
     }
 }
 @media all and (max-width: 325px) { 
@@ -64,6 +72,9 @@ padding: 0 25px;}
     body {
         font-size:0.75rem;
         max-width: 300px;
-        padding: 0 25px;
+        padding: 0 10px;
+    }
+    ul {
+        max-width:98%;
     }
 }
