@@ -36,8 +36,25 @@ a {color:#555;}
 
 @media all and (max-width: 675px) {
   body {font-size:1rem;
-max-width:90vw;}
+max-width:90vw;
+padding: 0 25px;}
   li {display:flex;
   flex-direction:column;}
   img {max-width:85vw;}
+}
+
+@media all and (max-width: 575px) { 
+
+    body {
+        max-width: 560px;
+        padding: 0 25px;
+    }
+}
+
+@media all and (max-width: 400px) { 
+
+    body {
+        max-width: 385px;
+        padding: 0 25px;
+    }
 }
