@@ -7,6 +7,12 @@ i {background-color:blue;
     color:#fff;
     padding:5px;
     font-style:italic;}
+    img {
+    max-width:400px;
+    max-height:300px;
+    padding-left:auto;
+    padding-right:auto;
+    }
 section.news {background-color: rgba(255,255,255,0.88);
     border-radius:8%;
     padding:2%;
@@ -39,8 +45,14 @@ a {color:#555;}
 max-width:90vw;
 padding: 0 25px;
 line-height:1.2rem;}
+h2 {
+    line-height:1.2em;
+}
+.one, .two {padding:5px 0px;}
   li {display:flex;
-  flex-direction:column;}
+  flex-direction:column;
+justify-items:center;
+padding-right:20px;}
   img {max-width:85vw;}
 }
 
@@ -78,6 +90,7 @@ line-height:1.2rem;}
         padding: 0 5px;
         line-height:1.05rem;
     }
+   
     ul {
         max-width:99%;
         
