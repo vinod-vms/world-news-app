@@ -30,10 +30,10 @@ function myFunction() {
   let req = new Request(url);
  fetch(req).then(res=>res.json()).then(data=> data.articles).then(articles => articles.map((item) => 
  {list.innerHTML +=
-` <li> <br> <div class="one"> <img style="max-width:400px;max-height:300px;padding-left:auto;padding-right:auto" src="${item.urlToImage}" > </div> <br> <div class="two"><h2> ${item.title} </h2> <br>
-${item.author} <br>
-${item.content}<br>
-<a href="${item.url}" target="_blank" > ${item.description} </a><br>
+` <li> <br> <div class="one"> <img style="max-width:400px;max-height:300px;padding-left:auto;padding-right:auto" src="${!item.urlToImage?'':item.urlToImage}" > </div> <br> <div class="two"><h2> ${!item.title?'':item.title} </h2> <br>
+${!item.author ? '' : item.author} <br>
+${!item.content?'':item.content}<br>
+<a href="${!item.url?'':item.url}" target="_blank" > ${!item.description?'':item.description} </a><br>
  <br>  </div> 
 </li> <br> <hr>
 `
