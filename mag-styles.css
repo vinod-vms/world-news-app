@@ -65,7 +65,7 @@ padding-right:20px;}
     width:100%;
     min-height:650px;
     overflow: hidden;
-    background-image:url("./vms.jpg");
+    background-image:url("vms.jpg");
     background-size:contain ;
     background-repeat:no-repeat;
     background-attachment:fixed;
