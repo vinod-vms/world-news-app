@@ -25,7 +25,7 @@ theCategory.addEventListener("change", function() {
 
 function myFunction() {
   
-  
+  list.innerHTML = " ";
   let url="https://newsapi.org/v2/top-headlines?" + myTopic + myCategory + "apiKey=b239337e7bb5435ea0f696ca87535274";
       
   let req = new Request(url);
