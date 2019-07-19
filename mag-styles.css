@@ -46,7 +46,7 @@ footer {
     flex-direction: column;
     align-items:center;
     color:#555;
-   text-shadow:1px 1px #bbb;
+   text-shadow:1px 1px #eee;
 }
 .vms-div {
     display:flex;
