@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Butcherman|Fredoka+One&display=swap');
 
 body {max-width:1200px;
   font-family: 'Roboto', sans-serif;
@@ -39,23 +40,14 @@ li {display:flex;
 .one, .two {padding:20px;}
 
 a {color:#555;}
-
-@media all and (max-width: 675px) {
-  body {font-size:1rem;
-max-width:90vw;
-padding: 0 25px;
-line-height:1.2rem;}
-h2 {
-    line-height:1.2em;
+footer {
+    font-family: 'Fredoka One', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    color:#555;
+   text-shadow:1px 1px #888;
 }
-.one, .two {padding:5px 0px;}
-  li {display:flex;
-  flex-direction:column;
-justify-items:center;
-padding-right:20px;}
-  img {max-width:85vw;}
-}
-
 .vms-div {
     display:flex;
     flex-direction:column;
@@ -85,6 +77,23 @@ padding-right:20px;}
         justify-items:center;
         align-items:center;
     }
+
+@media all and (max-width: 675px) {
+  body {font-size:1rem;
+max-width:90vw;
+padding: 0 25px;
+line-height:1.2rem;}
+h2 {
+    line-height:1.2em;
+}
+.one, .two {padding:5px 0px;}
+  li {display:flex;
+  flex-direction:column;
+justify-items:center;
+padding-right:20px;}
+  img {max-width:85vw;}
+}
+
 .blank {
     height:250px;
 }
