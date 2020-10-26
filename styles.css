@@ -1,0 +1,61 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Butcherman|Fredoka+One&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Cinzel+Decorative:900&display=swap);
+
+body {
+    font-family:Roboto,sans-serif;
+    font-size:1.2em;
+    background-color:#ff9a91;
+    background-repeat:no-repeat;
+    padding:10px;
+}
+
+.title {
+    font-family:Cinzel Decorative, cursive;
+    text-align:center;
+    margin-top:0;
+    
+}
+
+.logoimgdiv
+{   height:50px;
+    width:120px;
+    background-image:url(Logo.48e68711.png);
+    background-position:center;
+    background-size: contain;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+.ph {
+
+    text-align:center;
+    min-height:400px;
+}
+
+footer {
+padding-left:60px;
+}
+
+@media only screen and (max-width: 768px) {
+    .ph {
+        min-height:300px;
+    }
+    footer {
+        padding-left:0;
+        text-align:center;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .ph {
+      min-height:200px;
+    }
+  }
+
+  
+  @media only screen and (max-width: 450px) {
+    .ph {
+      min-height:100px;
+    }
+  }
