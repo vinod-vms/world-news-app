@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Link from 'next/Link'
+import Link from 'next/link'
 import React, {Fragment} from 'react'
 import styles from '../styles/Home.module.css'
 const fetch = require('isomorphic-unfetch')
