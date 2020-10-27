@@ -61,9 +61,10 @@ function Home({data}) {
 }
 
 export async function getStaticProps() {
-    const aKey = process.env.API_KEY;
+    //const aKey = process.env.API_KEY;
   var url = 'http://newsapi.org/v2/top-headlines?' +
-  'country=us&' + apiKey;
+  'country=us&' + 'apiKey=fe9339f8c8e7402ea579273f9d8d0114';
+
   
 var req = new Request(url);
   const res = await fetch(req)
