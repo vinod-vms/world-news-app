@@ -12,6 +12,9 @@
 /.next/
 /out/
 
+#env variables
+/.env
+
 # production
 /build
 
@@ -34,4 +37,4 @@ yarn-error.log*
 .vercel
 
 #read me
-README.md
+/README.md
