@@ -150,18 +150,31 @@
   .card{
     flex-basis:85%;
   }
+  .card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+  }
+  
+  .card p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
 }
 
 @media (max-width: 400px) {
-.main {
-  padding-left:40%;
-}
+
 .grid {
   margin-top:0.5rem;
 }
-.footer {
-  width:100vw;
-  margin-left:40%;
+.card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
 
+.card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 }
