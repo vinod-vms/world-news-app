@@ -148,8 +148,12 @@
     flex-direction: column;
   }
   .card{
-    flex-basis:85%;
-    max-width:85vw;
+    flex-basis:90%;
+    max-width:90vw;
+  }
+  .description {
+    line-height: 1.4;
+    font-size: 1.2rem;
   }
   .card h3 {
     margin: 0 0 1rem 0;
@@ -160,6 +164,10 @@
     margin: 0;
     font-size: 1.1rem;
     line-height: 1.5;
+  }
+  .footer p {
+    font-size:1.1 rem;
+    line-height: 1.4rem;
   }
 }
 
@@ -172,15 +180,30 @@
 .grid {
   margin-top:0.5rem;
 }
+.logoImg
+{   height:40px;
+    width:108px;
+}
+.description {
+  line-height: 1.3;
+  font-size: 1.1rem;
+}
+.title {
+  font-size:1.6rem;
+}
 .card h3 {
   margin: 0 0 1rem 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .card p {
   margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.3;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.footer p {
+  font-size:1 rem;
+  line-height: 1.2rem;
 }
 }
 @media (max-width: 300px) {
@@ -188,10 +211,17 @@
 .card h3 {
   font-size: 0.9rem;
 }
-
+.description {
+  line-height: 1.2;
+  font-size: 1.1rem;
+}
 .card p {
   margin: 0;
   font-size: 0.7rem;
   line-height: 1.2;
+}
+.footer p {
+  font-size:0.9 rem;
+  line-height: 1rem;
 }
 }
