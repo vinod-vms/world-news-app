@@ -12,13 +12,15 @@ function Home({data}) {
         <link rel="icon" href="/favicon_new.ico" />
       </Head>
       <main className={styles.main}>
-      <div className={styles.logoImg} >
-
+        
+        <div className={styles.headingGrid}>
+        <div className={styles.headingCard}>
+        <div className={styles.logoImg} >
       </div>
         <h1 className={styles.title}>
         World News
         </h1>
-
+        
         <p className={styles.description}>
           Country: <Link href="/">
           <a>India </a>
@@ -30,7 +32,10 @@ function Home({data}) {
           <a>US </a>
         </Link>
         </p>
+        </div>
+        </div>
         <div className={styles.grid}>
+
         
             {data.map(({publishedAt, title, urlToImage, url,description}) => (
               <React.Fragment key={publishedAt} >
@@ -62,9 +67,9 @@ function Home({data}) {
 }
 
 export async function getStaticProps() {
-  const aKey = process.env.API_KEY;
+  //const aKey = process.env.API_KEY;
   var url = 'http://newsapi.org/v2/top-headlines?' +
-  'country=in&' + aKey;
+  'country=in&' + 'apiKey=fe9339f8c8e7402ea579273f9d8d0114';
 var req = new Request(url);
   const res = await fetch(req)
   let data = await res.json();
