@@ -143,6 +143,9 @@
     flex-wrap:nowrap;
     margin-top:2rem;
   }
+  .card {
+    height:300px;
+  }
   .headingGrid {
     width:100%;
     flex-direction: column;
@@ -180,6 +183,10 @@
 .grid {
   margin-top:0.5rem;
 }
+.card {
+  height:250px;
+}
+
 .logoImg
 {   height:40px;
     width:108px;
@@ -207,9 +214,15 @@
 }
 }
 @media (max-width: 300px) {
+  .card {
+    height:170px;
+  }
   
 .card h3 {
   font-size: 0.9rem;
+}
+.title {
+  font-size:1.2rem;
 }
 .description {
   line-height: 1.2;
@@ -221,7 +234,7 @@
   line-height: 1.2;
 }
 .footer p {
-  font-size:0.9 rem;
-  line-height: 1rem;
+  font-size:0.7rem;
+  line-height: 0.9rem;
 }
 }
