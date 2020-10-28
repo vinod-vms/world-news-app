@@ -139,6 +139,10 @@
     flex-wrap:nowrap;
     margin-top:2rem;
   }
+  .card{
+    flex-basis:90%;
+    max-width:90vw;
+  }
 }
 @media (max-width: 600px) {
   .main{
