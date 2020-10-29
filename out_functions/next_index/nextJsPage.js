@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "LY62");
+/******/ 	return __webpack_require__(__webpack_require__.s = "J+D8");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -267,19 +267,19 @@ query={...(query.amp?{amp:query.amp}:{})};req.url=pathname;renderOpts.resolvedAs
 const asPath=renderOpts.resolvedAsPath||req.url;const router=new ServerRouter(pathname,query,asPath,{isFallback:isFallback},basePath,renderOpts.locale,renderOpts.locales,renderOpts.defaultLocale);const ctx={err,req:isAutoExport?undefined:req,res:isAutoExport?undefined:res,pathname,query,asPath,AppTree:props=>{return/*#__PURE__*/_react.default.createElement(AppContainer,null,/*#__PURE__*/_react.default.createElement(App,Object.assign({},props,{Component:Component,router:router})));}};let props;const ampState={ampFirst:pageConfig.amp===true,hasQuery:Boolean(query.amp),hybrid:pageConfig.amp==='hybrid'};const inAmpMode=(0,_amp.isInAmpMode)(ampState);const reactLoadableModules=[];let head=(0,_head.defaultHead)(inAmpMode);const AppContainer=({children})=>/*#__PURE__*/_react.default.createElement(_routerContext.RouterContext.Provider,{value:router},/*#__PURE__*/_react.default.createElement(_ampContext.AmpStateContext.Provider,{value:ampState},/*#__PURE__*/_react.default.createElement(_headManagerContext.HeadManagerContext.Provider,{value:{updateHead:state=>{head=state;},mountedInstances:new Set()}},/*#__PURE__*/_react.default.createElement(_loadableContext.LoadableContext.Provider,{value:moduleName=>reactLoadableModules.push(moduleName)},children))));try{props=await(0,_utils.loadGetInitialProps)(App,{AppTree:ctx.AppTree,Component,router,ctx});if(isSSG){props[_constants2.STATIC_PROPS_ID]=true;}let previewData;if((isSSG||getServerSideProps)&&!isFallback){// Reads of this are cached on the `req` object, so this should resolve
 // instantly. There's no need to pass this data down from a previous
 // invoke, where we'd have to consider server & serverless.
-previewData=(0,_apiUtils.tryGetPreviewData)(req,res,previewProps);}if(isSSG&&!isFallback){let data;try{data=await getStaticProps({...(pageIsDynamic?{params:query}:undefined),...(previewData!==false?{preview:true,previewData:previewData}:undefined),locales:renderOpts.locales,locale:renderOpts.locale});}catch(staticPropsError){// remove not found error code to prevent triggering legacy
+previewData=(0,_apiUtils.tryGetPreviewData)(req,res,previewProps);}if(isSSG&&!isFallback){let data;try{data=await getStaticProps({...(pageIsDynamic?{params:query}:undefined),...(previewData!==false?{preview:true,previewData:previewData}:undefined),locales:renderOpts.locales,locale:renderOpts.locale,defaultLocale:renderOpts.defaultLocale});}catch(staticPropsError){// remove not found error code to prevent triggering legacy
 // 404 rendering
-if(staticPropsError.code==='ENOENT'){delete staticPropsError.code;}throw staticPropsError;}if(data==null){throw new Error(_constants.GSP_NO_RETURNED_VALUE);}const invalidKeys=Object.keys(data).filter(key=>key!=='revalidate'&&key!=='props'&&key!=='unstable_redirect');if(invalidKeys.includes('unstable_revalidate')){throw new Error(_constants.UNSTABLE_REVALIDATE_RENAME_ERROR);}if(invalidKeys.length){throw new Error(invalidKeysMsg('getStaticProps',invalidKeys));}if(data.unstable_redirect&&typeof data.unstable_redirect==='object'){checkRedirectValues(data.unstable_redirect,req);if(isBuildTimeSSG){throw new Error(`\`redirect\` can not be returned from getStaticProps during prerendering (${req.url})\n`+`See more info here: https://err.sh/next.js/gsp-redirect-during-prerender`);}if(isDataReq){data.props={__N_REDIRECT:data.unstable_redirect.destination};}else{handleRedirect(res,data.unstable_redirect);return null;}}if((dev||isBuildTimeSSG)&&!(0,_isSerializableProps.isSerializableProps)(pathname,'getStaticProps',data.props)){// this fn should throw an error instead of ever returning `false`
-throw new Error('invariant: getStaticProps did not return valid props. Please report this.');}if(typeof data.revalidate==='number'){if(!Number.isInteger(data.revalidate)){throw new Error(`A page's revalidate option must be seconds expressed as a natural number. Mixed numbers, such as '${data.revalidate}', cannot be used.`+`\nTry changing the value to '${Math.ceil(data.revalidate)}' or using \`Math.ceil()\` if you're computing the value.`);}else if(data.revalidate<=0){throw new Error(`A page's revalidate option can not be less than or equal to zero. A revalidate option of zero means to revalidate after _every_ request, and implies stale data cannot be tolerated.`+`\n\nTo never revalidate, you can set revalidate to \`false\` (only ran once at build-time).`+`\nTo revalidate as soon as possible, you can set the value to \`1\`.`);}else if(data.revalidate>31536000){// if it's greater than a year for some reason error
-console.warn(`Warning: A page's revalidate option was set to more than a year. This may have been done in error.`+`\nTo only run getStaticProps at build-time and not revalidate at runtime, you can set \`revalidate\` to \`false\`!`);}}else if(data.revalidate===true){// When enabled, revalidate after 1 second. This value is optimal for
+if(staticPropsError.code==='ENOENT'){delete staticPropsError.code;}throw staticPropsError;}if(data==null){throw new Error(_constants.GSP_NO_RETURNED_VALUE);}const invalidKeys=Object.keys(data).filter(key=>key!=='revalidate'&&key!=='props'&&key!=='redirect'&&key!=='notFound');if(invalidKeys.includes('unstable_revalidate')){throw new Error(_constants.UNSTABLE_REVALIDATE_RENAME_ERROR);}if(invalidKeys.length){throw new Error(invalidKeysMsg('getStaticProps',invalidKeys));}if('notFound'in data&&data.notFound){if(pathname==='/404'){throw new Error(`The /404 page can not return notFound in "getStaticProps", please remove it to continue!`);};renderOpts.isNotFound=true;renderOpts.revalidate=false;return null;}if('redirect'in data&&data.redirect&&typeof data.redirect==='object'){checkRedirectValues(data.redirect,req);if(isBuildTimeSSG){throw new Error(`\`redirect\` can not be returned from getStaticProps during prerendering (${req.url})\n`+`See more info here: https://err.sh/next.js/gsp-redirect-during-prerender`);}if(isDataReq){;data.props={__N_REDIRECT:data.redirect.destination};}else{handleRedirect(res,data.redirect);return null;}}if((dev||isBuildTimeSSG)&&!(0,_isSerializableProps.isSerializableProps)(pathname,'getStaticProps',data.props)){// this fn should throw an error instead of ever returning `false`
+throw new Error('invariant: getStaticProps did not return valid props. Please report this.');}if('revalidate'in data&&typeof data.revalidate==='number'){if(!Number.isInteger(data.revalidate)){throw new Error(`A page's revalidate option must be seconds expressed as a natural number. Mixed numbers, such as '${data.revalidate}', cannot be used.`+`\nTry changing the value to '${Math.ceil(data.revalidate)}' or using \`Math.ceil()\` if you're computing the value.`);}else if(data.revalidate<=0){throw new Error(`A page's revalidate option can not be less than or equal to zero. A revalidate option of zero means to revalidate after _every_ request, and implies stale data cannot be tolerated.`+`\n\nTo never revalidate, you can set revalidate to \`false\` (only ran once at build-time).`+`\nTo revalidate as soon as possible, you can set the value to \`1\`.`);}else if(data.revalidate>31536000){// if it's greater than a year for some reason error
+console.warn(`Warning: A page's revalidate option was set to more than a year. This may have been done in error.`+`\nTo only run getStaticProps at build-time and not revalidate at runtime, you can set \`revalidate\` to \`false\`!`);}}else if('revalidate'in data&&data.revalidate===true){// When enabled, revalidate after 1 second. This value is optimal for
 // the most up-to-date page possible, but without a 1-to-1
 // request-refresh ratio.
 data.revalidate=1;}else{// By default, we never revalidate.
-data.revalidate=false;}props.pageProps=Object.assign({},props.pageProps,data.props)// pass up revalidate and props for export
+;data.revalidate=false;}props.pageProps=Object.assign({},props.pageProps,'props'in data?data.props:undefined)// pass up revalidate and props for export
 // TODO: change this to a different passing mechanism
-;renderOpts.revalidate=data.revalidate;renderOpts.pageData=props;}if(getServerSideProps){props[_constants2.SERVER_PROPS_ID]=true;}if(getServerSideProps&&!isFallback){let data;try{data=await getServerSideProps({req,res,query,resolvedUrl:renderOpts.resolvedUrl,...(pageIsDynamic?{params:params}:undefined),...(previewData!==false?{preview:true,previewData:previewData}:undefined),locales:renderOpts.locales,locale:renderOpts.locale});}catch(serverSidePropsError){// remove not found error code to prevent triggering legacy
+;renderOpts.revalidate='revalidate'in data?data.revalidate:undefined;renderOpts.pageData=props;}if(getServerSideProps){props[_constants2.SERVER_PROPS_ID]=true;}if(getServerSideProps&&!isFallback){let data;try{data=await getServerSideProps({req,res,query,resolvedUrl:renderOpts.resolvedUrl,...(pageIsDynamic?{params:params}:undefined),...(previewData!==false?{preview:true,previewData:previewData}:undefined),locales:renderOpts.locales,locale:renderOpts.locale,defaultLocale:renderOpts.defaultLocale});}catch(serverSidePropsError){// remove not found error code to prevent triggering legacy
 // 404 rendering
-if(serverSidePropsError.code==='ENOENT'){delete serverSidePropsError.code;}throw serverSidePropsError;}if(data==null){throw new Error(_constants.GSSP_NO_RETURNED_VALUE);}const invalidKeys=Object.keys(data).filter(key=>key!=='props'&&key!=='unstable_redirect');if(invalidKeys.length){throw new Error(invalidKeysMsg('getServerSideProps',invalidKeys));}if(data.unstable_redirect&&typeof data.unstable_redirect==='object'){checkRedirectValues(data.unstable_redirect,req);if(isDataReq){data.props={__N_REDIRECT:data.unstable_redirect.destination};}else{handleRedirect(res,data.unstable_redirect);return null;}}if((dev||isBuildTimeSSG)&&!(0,_isSerializableProps.isSerializableProps)(pathname,'getServerSideProps',data.props)){// this fn should throw an error instead of ever returning `false`
+if(serverSidePropsError.code==='ENOENT'){delete serverSidePropsError.code;}throw serverSidePropsError;}if(data==null){throw new Error(_constants.GSSP_NO_RETURNED_VALUE);}const invalidKeys=Object.keys(data).filter(key=>key!=='props'&&key!=='redirect'&&key!=='notFound');if(data.unstable_notFound){throw new Error(`unstable_notFound has been renamed to notFound, please update the field to continue. Page: ${pathname}`);}if(data.unstable_redirect){throw new Error(`unstable_redirect has been renamed to redirect, please update the field to continue. Page: ${pathname}`);}if(invalidKeys.length){throw new Error(invalidKeysMsg('getServerSideProps',invalidKeys));}if('notFound'in data){if(pathname==='/404'){throw new Error(`The /404 page can not return notFound in "getStaticProps", please remove it to continue!`);};renderOpts.isNotFound=true;return null;}if('redirect'in data&&typeof data.redirect==='object'){checkRedirectValues(data.redirect,req);if(isDataReq){;data.props={__N_REDIRECT:data.redirect.destination};}else{handleRedirect(res,data.redirect);return null;}}if((dev||isBuildTimeSSG)&&!(0,_isSerializableProps.isSerializableProps)(pathname,'getServerSideProps',data.props)){// this fn should throw an error instead of ever returning `false`
 throw new Error('invariant: getServerSideProps did not return valid props. Please report this.');}props.pageProps=Object.assign({},props.pageProps,data.props);renderOpts.pageData=props;}}catch(dataFetchError){if(isDataReq||!dev||!dataFetchError)throw dataFetchError;ctx.err=dataFetchError;renderOpts.err=dataFetchError;console.error(dataFetchError);}if(!isSSG&&// we only show this warning for legacy pages
 !getServerSideProps&&"production"!=='production'&&Object.keys(((_props=props)==null?void 0:_props.pageProps)||{}).includes('url')){console.warn(`The prop \`url\` is a reserved prop in Next.js for legacy reasons and will be overridden on page ${pathname}\n`+`See more info here: https://err.sh/vercel/next.js/reserved-page-prop`);}// We only need to do this if we want to support calling
 // _app's getInitialProps for getServerSideProps if not this can be removed
@@ -293,7 +293,7 @@ let filteredBuildManifest=buildManifest;if(isAutoExport&&pageIsDynamic){const pa
 // future.
 if(page in filteredBuildManifest.pages){filteredBuildManifest={...filteredBuildManifest,pages:{...filteredBuildManifest.pages,[page]:[...filteredBuildManifest.pages[page],...filteredBuildManifest.lowPriorityFiles.filter(f=>f.includes('_buildManifest'))]},lowPriorityFiles:filteredBuildManifest.lowPriorityFiles.filter(f=>!f.includes('_buildManifest'))};}}const renderPage=(options={})=>{if(ctx.err&&ErrorDebug){return{html:(0,_server.renderToString)(/*#__PURE__*/_react.default.createElement(ErrorDebug,{error:ctx.err})),head};}if(dev&&(props.router||props.Component)){throw new Error(`'router' and 'Component' can not be returned in getInitialProps from _app.js https://err.sh/vercel/next.js/cant-override-next-props`);}const{App:EnhancedApp,Component:EnhancedComponent}=enhanceComponents(options,App,Component);const html=(0,_server.renderToString)(/*#__PURE__*/_react.default.createElement(AppContainer,null,/*#__PURE__*/_react.default.createElement(EnhancedApp,Object.assign({Component:EnhancedComponent,router:router},props))));return{html,head};};const documentCtx={...ctx,renderPage};const docProps=await(0,_utils.loadGetInitialProps)(Document,documentCtx);// the response might be finished on the getInitialProps call
 if((0,_utils.isResSent)(res)&&!isSSG)return null;if(!docProps||typeof docProps.html!=='string'){const message=`"${(0,_utils.getDisplayName)(Document)}.getInitialProps()" should resolve to an object with a "html" prop set with a valid html string`;throw new Error(message);}const dynamicImportIdsSet=new Set();const dynamicImports=[];for(const mod of reactLoadableModules){const manifestItem=reactLoadableManifest[mod];if(manifestItem){manifestItem.forEach(item=>{dynamicImports.push(item);dynamicImportIdsSet.add(item.id);});}}const dynamicImportsIds=[...dynamicImportIdsSet];const hybridAmp=ampState.hybrid;// update renderOpts so export knows current state
-renderOpts.inAmpMode=inAmpMode;renderOpts.hybridAmp=hybridAmp;const docComponentsRendered={};let html=renderDocument(Document,{...renderOpts,docComponentsRendered,buildManifest:filteredBuildManifest,// Only enabled in production as development mode has features relying on HMR (style injection for example)
+renderOpts.inAmpMode=inAmpMode;renderOpts.hybridAmp=hybridAmp;const docComponentsRendered={};let html=renderDocument(Document,{...renderOpts,canonicalBase:!renderOpts.ampPath&&req.__nextStrippedLocale?`${renderOpts.canonicalBase||''}/${renderOpts.locale}`:renderOpts.canonicalBase,docComponentsRendered,buildManifest:filteredBuildManifest,// Only enabled in production as development mode has features relying on HMR (style injection for example)
 unstable_runtimeJS: true?pageConfig.unstable_runtimeJS:undefined,dangerousAsPath:router.asPath,ampState,props,headTags:await headTags(documentCtx),isFallback,docProps,pathname,ampPath,query,inAmpMode,hybridAmp,dynamicImportsIds,dynamicImports,gsp:!!getStaticProps?true:undefined,gssp:!!getServerSideProps?true:undefined,gip:hasPageGetInitialProps?true:undefined,appGip:!defaultAppGetInitialProps?true:undefined,devOnlyCacheBusterQueryString});if(false){}if(inAmpMode&&html){// inject HTML to AMP_RENDER_TARGET to allow rendering
 // directly to body in AMP mode
 const ampRenderIndex=html.indexOf(_constants2.AMP_RENDER_TARGET);html=html.substring(0,ampRenderIndex)+`<!-- __NEXT_DATA__ -->${docProps.html}`+html.substring(ampRenderIndex+_constants2.AMP_RENDER_TARGET.length);html=await(0,_optimizeAmp.default)(html,renderOpts.ampOptimizerConfig);if(!renderOpts.ampSkipValidation&&renderOpts.ampValidator){await renderOpts.ampValidator(html,pathname);}}html=await(0,_postProcess.default)(html,{getFontDefinition},{optimizeFonts:renderOpts.optimizeFonts,optimizeImages:renderOpts.optimizeImages});if(inAmpMode||hybridAmp){// fix &amp being escaped for amphtml rel link
@@ -1781,7 +1781,7 @@ module.exports = hash;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-exports.__esModule=true;exports.interopDefault=interopDefault;exports.loadComponents=loadComponents;var _constants=__webpack_require__("w7wo");var _path=__webpack_require__("oyvS");var _require=__webpack_require__("vv4h");function interopDefault(mod){return mod.default||mod;}async function loadComponents(distDir,pathname,serverless){if(serverless){const Component=await(0,_require.requirePage)(pathname,distDir,serverless);const{getStaticProps,getStaticPaths,getServerSideProps}=Component;return{Component,pageConfig:Component.config||{},getStaticProps,getStaticPaths,getServerSideProps};}const DocumentMod=(0,_require.requirePage)('/_document',distDir,serverless);const AppMod=(0,_require.requirePage)('/_app',distDir,serverless);const ComponentMod=(0,_require.requirePage)(pathname,distDir,serverless);const[buildManifest,reactLoadableManifest,Component,Document,App]=await Promise.all([__webpack_require__("PJv+")((0,_path.join)(distDir,_constants.BUILD_MANIFEST)),__webpack_require__("PJv+")((0,_path.join)(distDir,_constants.REACT_LOADABLE_MANIFEST)),interopDefault(ComponentMod),interopDefault(DocumentMod),interopDefault(AppMod)]);const{getServerSideProps,getStaticProps,getStaticPaths}=ComponentMod;return{App,Document,Component,buildManifest,reactLoadableManifest,pageConfig:ComponentMod.config||{},getServerSideProps,getStaticProps,getStaticPaths};}
+exports.__esModule=true;exports.interopDefault=interopDefault;exports.loadComponents=loadComponents;var _constants=__webpack_require__("w7wo");var _path=__webpack_require__("oyvS");var _require=__webpack_require__("vv4h");function interopDefault(mod){return mod.default||mod;}async function loadComponents(distDir,pathname,serverless){if(serverless){const Component=await(0,_require.requirePage)(pathname,distDir,serverless);let{getStaticProps,getStaticPaths,getServerSideProps}=Component;getStaticProps=await getStaticProps;getStaticPaths=await getStaticPaths;getServerSideProps=await getServerSideProps;const pageConfig=(await Component.config)||{};return{Component,pageConfig,getStaticProps,getStaticPaths,getServerSideProps};}const[DocumentMod,AppMod,ComponentMod]=await Promise.all([(0,_require.requirePage)('/_document',distDir,serverless),(0,_require.requirePage)('/_app',distDir,serverless),(0,_require.requirePage)(pathname,distDir,serverless)]);const[buildManifest,reactLoadableManifest,Component,Document,App]=await Promise.all([__webpack_require__("PJv+")((0,_path.join)(distDir,_constants.BUILD_MANIFEST)),__webpack_require__("PJv+")((0,_path.join)(distDir,_constants.REACT_LOADABLE_MANIFEST)),interopDefault(ComponentMod),interopDefault(DocumentMod),interopDefault(AppMod)]);const{getServerSideProps,getStaticProps,getStaticPaths}=ComponentMod;return{App,Document,Component,buildManifest,reactLoadableManifest,pageConfig:ComponentMod.config||{},getServerSideProps,getStaticProps,getStaticPaths};}
 //# sourceMappingURL=load-components.js.map
 
 /***/ }),
@@ -2005,6 +2005,378 @@ exports.default = Node;
 
 /***/ }),
 
+/***/ "J+D8":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticProps", function() { return getStaticProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticPaths", function() { return getStaticPaths; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return getServerSideProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticParams", function() { return unstable_getStaticParams; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticProps", function() { return unstable_getStaticProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticPaths", function() { return unstable_getStaticPaths; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getServerProps", function() { return unstable_getServerProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "config", function() { return config; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_app", function() { return _app; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderReqToHTML", function() { return renderReqToHTML; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
+/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
+/* harmony import */ var next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("fkL1");
+/* harmony import */ var next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2__);
+
+    
+    
+    
+    const {isResSent} = __webpack_require__("g/15");
+
+    
+    const { processEnv } = __webpack_require__("fXeI")
+    processEnv([{"path":".env","contents":"API_KEY = 'apiKey=fe9339f8c8e7402ea579273f9d8d0114'"}])
+  
+    
+    const runtimeConfig = {}
+    const {parse: parseUrl, format: formatUrl} = __webpack_require__("bzos")
+    const {parse: parseQs} = __webpack_require__("8xkj")
+    const { renderToHTML } = __webpack_require__("/bjS");
+    const { tryGetPreviewData } = __webpack_require__("PCLx");
+    const { denormalizePagePath } = __webpack_require__("wkBG")
+    const { setLazyProp, getCookieParser } = __webpack_require__("PCLx")
+    const {sendPayload} = __webpack_require__("KyNf");
+    const buildManifest = __webpack_require__("LZ9C");
+    const reactLoadableManifest = __webpack_require__("67Bq");
+
+    const appMod = __webpack_require__("1TCz")
+    let App = appMod.default || appMod.then && appMod.then(mod => mod.default);
+
+    
+    
+    const { rewrites } = __webpack_require__("Skye")
+    const { pathToRegexp, default: pathMatch } = __webpack_require__("N6Fi")
+  
+
+    const compMod = __webpack_require__("RNiq")
+
+    let Component = compMod.default || compMod.then && compMod.then(mod => mod.default)
+    /* harmony default export */ __webpack_exports__["default"] = (Component);
+    let getStaticProps = compMod['getStaticProp' + 's'] || compMod.then && compMod.then(mod => mod['getStaticProp' + 's'])
+    let getStaticPaths = compMod['getStaticPath' + 's'] || compMod.then && compMod.then(mod => mod['getStaticPath' + 's'])
+    let getServerSideProps = compMod['getServerSideProp' + 's'] || compMod.then && compMod.then(mod => mod['getServerSideProp' + 's'])
+
+    // kept for detecting legacy exports
+    const unstable_getStaticParams = compMod['unstable_getStaticParam' + 's'] || compMod.then && compMod.then(mod => mod['unstable_getStaticParam' + 's'])
+    const unstable_getStaticProps = compMod['unstable_getStaticProp' + 's'] || compMod.then && compMod.then(mod => mod['unstable_getStaticProp' + 's'])
+    const unstable_getStaticPaths = compMod['unstable_getStaticPath' + 's'] || compMod.then && compMod.then(mod => mod['unstable_getStaticPath' + 's'])
+    const unstable_getServerProps = compMod['unstable_getServerProp' + 's'] || compMod.then && compMod.then(mod => mod['unstable_getServerProp' + 's'])
+
+    
+    
+    
+    
+    const getCustomRouteMatcher = pathMatch(true)
+    const prepareDestination = __webpack_require__("6mnf").default
+
+    function handleRewrites(parsedUrl) {
+      for (const rewrite of rewrites) {
+        const matcher = getCustomRouteMatcher(rewrite.source)
+        const params = matcher(parsedUrl.pathname)
+
+        if (params) {
+          const { parsedDestination } = prepareDestination(
+            rewrite.destination,
+            params,
+            parsedUrl.query,
+            true,
+            ""
+          )
+
+          Object.assign(parsedUrl.query, parsedDestination.query)
+          delete parsedDestination.query
+
+          Object.assign(parsedUrl, parsedDestination)
+
+          if (parsedUrl.pathname === '/'){
+            break
+          }
+          
+        }
+      }
+
+      return parsedUrl
+    }
+  
+
+    let config = compMod['confi' + 'g'] || (compMod.then && compMod.then(mod => mod['confi' + 'g'])) || {}
+    const _app = App
+    async function renderReqToHTML(req, res, renderMode, _renderOpts, _params) {
+      let Document
+      let Error
+      let notFoundMod
+      ;[
+        getStaticProps,
+        getServerSideProps,
+        getStaticPaths,
+        Component,
+        App,
+        config,
+        { default: Document },
+        { default: Error },
+        
+      ] = await Promise.all([
+        getStaticProps,
+        getServerSideProps,
+        getStaticPaths,
+        Component,
+        App,
+        config,
+        __webpack_require__("VDXt"),
+        __webpack_require__("/a9y"),
+        
+      ])
+
+      const fromExport = renderMode === 'export' || renderMode === true;
+      const nextStartMode = renderMode === 'passthrough'
+
+      setLazyProp({ req }, 'cookies', getCookieParser(req))
+
+      const options = {
+        App,
+        Document,
+        buildManifest,
+        getStaticProps,
+        getServerSideProps,
+        getStaticPaths,
+        reactLoadableManifest,
+        canonicalBase: "",
+        buildId: "1VihkrN2kMURQ8sgUzGPJ",
+        assetPrefix: "",
+        runtimeConfig: runtimeConfig.publicRuntimeConfig || {},
+        previewProps: {previewModeId:"6d6b5d88a0447a1ca7aa67d3147f2d37",previewModeSigningKey:"066a61334e179a32492fc97e3024d263f88ecae28133aaef8de3641797057597",previewModeEncryptionKey:"dbb66d8a736fea22f00df303a03b49bbf84737a3569820634bb87e5739fe28fd"},
+        env: process.env,
+        basePath: "",
+        ..._renderOpts
+      }
+      let _nextData = false
+      let parsedUrl
+
+      try {
+        // We need to trust the dynamic route params from the proxy
+        // to ensure we are using the correct values
+        const trustQuery = !getStaticProps && req.headers['x-vercel-id']
+        let parsedUrl = parseUrl(req.url, true)
+        let routeNoAssetPath = parsedUrl.pathname
+        const origQuery = Object.assign({}, parsedUrl.query)
+
+        parsedUrl = handleRewrites(parsedUrl)
+
+        
+
+        // remove ?amp=1 from request URL if rendering for export
+        if (fromExport && parsedUrl.query.amp) {
+          const queryNoAmp = Object.assign({}, origQuery)
+          delete queryNoAmp.amp
+
+          req.url = formatUrl({
+            ...parsedUrl,
+            search: undefined,
+            query: queryNoAmp
+          })
+        }
+
+        if (parsedUrl.pathname.match(/_next\/data/)) {
+          const {
+            default: getRouteNoAssetPath,
+          } = __webpack_require__("1Ej0");
+          _nextData = true;
+          parsedUrl.pathname = getRouteNoAssetPath(
+            parsedUrl.pathname.replace(
+              new RegExp('/_next/data/1VihkrN2kMURQ8sgUzGPJ/'),
+              '/'
+            ),
+            '.json'
+          );
+          routeNoAssetPath = parsedUrl.pathname
+        }
+
+        
+      const i18n = {}
+      const detectedLocale = undefined
+      const defaultLocale = undefined
+      const locales = undefined
+    
+
+        const renderOpts = Object.assign(
+          {
+            Component,
+            pageConfig: config,
+            nextExport: fromExport,
+            isDataReq: _nextData,
+            locale: detectedLocale,
+            locales,
+            defaultLocale: i18n.defaultLocale,
+          },
+          options,
+        )
+
+        
+
+        const params = {};
+        const nowParams = null;
+
+        // make sure to set renderOpts to the correct params e.g. _params
+        // if provided from worker or params if we're parsing them here
+        renderOpts.params = _params || params
+
+        // make sure to normalize req.url on Vercel to strip dynamic params
+        // from the query which are added during routing
+        
+
+        // normalize request URL/asPath for fallback/revalidate pages since the
+        // proxy sets the request URL to the output's path for fallback pages
+        
+
+        // make sure to normalize asPath for revalidate and _next/data requests
+        // since the asPath should match what is shown on the client
+        if (
+          !fromExport &&
+          (getStaticProps || getServerSideProps)
+        ) {
+          
+
+          parsedUrl.pathname = denormalizePagePath(parsedUrl.pathname)
+          renderOpts.resolvedUrl = formatUrl({
+            ...parsedUrl,
+            query: origQuery
+          })
+
+          // For getServerSideProps we need to ensure we use the original URL
+          // and not the resolved URL to prevent a hydration mismatch on asPath
+          renderOpts.resolvedAsPath = getServerSideProps
+            ? formatUrl({
+              ...parsedUrl,
+              pathname: routeNoAssetPath,
+              query: origQuery,
+            })
+            : renderOpts.resolvedUrl
+        }
+
+        const isFallback = parsedUrl.query.__nextFallback
+
+        const previewData = tryGetPreviewData(req, res, options.previewProps)
+        const isPreviewMode = previewData !== false
+        if (false) {}
+        let result = await renderToHTML(req, res, "/", Object.assign({}, getStaticProps ? { ...(parsedUrl.query.amp ? { amp: '1' } : {}) } : parsedUrl.query, nowParams ? nowParams : params, _params, isFallback ? { __nextFallback: 'true' } : {}), renderOpts)
+
+        if (!renderMode) {
+          if (_nextData || getStaticProps || getServerSideProps) {
+            if (renderOpts.isNotFound) {
+              res.statusCode = 404
+
+              const NotFoundComponent = Error
+
+              const errPathname = "/_error"
+
+              const result = await renderToHTML(req, res, errPathname, parsedUrl.query, Object.assign({}, options, {
+                getStaticProps: undefined,
+                getStaticPaths: undefined,
+                getServerSideProps: undefined,
+                Component: NotFoundComponent,
+                err: undefined
+              }))
+
+              sendPayload(req, res, result, 'html', true, {
+                private: isPreviewMode,
+                stateful: !!getServerSideProps,
+                revalidate: renderOpts.revalidate,
+              })
+              return null
+            } else {
+              sendPayload(req, res, _nextData ? JSON.stringify(renderOpts.pageData) : result, _nextData ? 'json' : 'html', true, {
+                private: isPreviewMode,
+                stateful: !!getServerSideProps,
+                revalidate: renderOpts.revalidate,
+              })
+              return null
+            }
+          }
+        } else if (isPreviewMode) {
+          res.setHeader(
+            'Cache-Control',
+            'private, no-cache, no-store, max-age=0, must-revalidate'
+          )
+        }
+
+        if (renderMode) return { html: result, renderOpts }
+        return result
+      } catch (err) {
+        if (!parsedUrl) {
+          parsedUrl = parseUrl(req.url, true)
+        }
+
+        if (err.code === 'ENOENT') {
+          res.statusCode = 404
+        } else if (err.code === 'DECODE_FAILED') {
+          // TODO: better error?
+          res.statusCode = 400
+        } else {
+          console.error('Unhandled error during request:', err)
+
+          // Backwards compat (call getInitialProps in custom error):
+          try {
+            await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
+              getStaticProps: undefined,
+              getStaticPaths: undefined,
+              getServerSideProps: undefined,
+              Component: Error,
+              err: err,
+              // Short-circuit rendering:
+              isDataReq: true
+            }))
+          } catch (underErrorErr) {
+            console.error('Failed call /_error subroutine, continuing to crash function:', underErrorErr)
+          }
+
+          // Throw the error to crash the serverless function
+          if (isResSent(res)) {
+            console.error('!!! WARNING !!!')
+            console.error(
+              'Your function crashed, but closed the response before allowing the function to exit.\n' +
+              'This may cause unexpected behavior for the next request.'
+            )
+            console.error('!!! WARNING !!!')
+          }
+          throw err
+        }
+
+        const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
+          getStaticProps: undefined,
+          getStaticPaths: undefined,
+          getServerSideProps: undefined,
+          Component: Error,
+          err: res.statusCode === 404 ? undefined : err
+        }))
+        return result
+      }
+    }
+    async function render (req, res) {
+      try {
+        await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
+        const html = await renderReqToHTML(req, res)
+        if (html) {
+          sendPayload(req, res, html, 'html', {generateEtags: true, poweredByHeader: true})
+        }
+      } catch(err) {
+        console.error(err)
+        await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
+        // Throw the error to crash the serverless function
+        throw err
+      }
+    }
+  
+
+/***/ }),
+
 /***/ "JRhc":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2142,321 +2514,10 @@ exports.__esModule=true;exports.sendPayload=sendPayload;var _utils=__webpack_req
 
 /***/ }),
 
-/***/ "LY62":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticParams", function() { return unstable_getStaticParams; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticProps", function() { return getStaticProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticPaths", function() { return getStaticPaths; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return getServerSideProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticProps", function() { return unstable_getStaticProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticPaths", function() { return unstable_getStaticPaths; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getServerProps", function() { return unstable_getServerProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "config", function() { return config; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_app", function() { return _app; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderReqToHTML", function() { return renderReqToHTML; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
-/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
-/* harmony import */ var next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("fkL1");
-/* harmony import */ var next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2__);
-
-    
-    
-    
-    const {isResSent} = __webpack_require__("g/15");
-
-    
-    const { processEnv } = __webpack_require__("fXeI")
-    processEnv([{"path":".env","contents":"API_KEY = 'apiKey=fe9339f8c8e7402ea579273f9d8d0114'"}])
-  
-    
-    const runtimeConfig = {}
-    const {parse: parseUrl, format: formatUrl} = __webpack_require__("bzos")
-    const {parse: parseQs} = __webpack_require__("8xkj")
-    const { renderToHTML } = __webpack_require__("/bjS");
-    const { tryGetPreviewData } = __webpack_require__("PCLx");
-    const { denormalizePagePath } = __webpack_require__("wkBG")
-    const { setLazyProp, getCookieParser } = __webpack_require__("PCLx")
-    const {sendPayload} = __webpack_require__("KyNf");
-    const buildManifest = __webpack_require__("LZ9C");
-    const reactLoadableManifest = __webpack_require__("67Bq");
-    const Document = __webpack_require__("VDXt").default;
-    const Error = __webpack_require__("/a9y").default;
-    const App = __webpack_require__("1TCz").default;
-
-    
-    
-    const { rewrites } = __webpack_require__("Skye")
-    const { pathToRegexp, default: pathMatch } = __webpack_require__("N6Fi")
-  
-
-    const ComponentInfo = __webpack_require__("RNiq")
-
-    const Component = ComponentInfo.default
-    /* harmony default export */ __webpack_exports__["default"] = (Component);
-    const unstable_getStaticParams = ComponentInfo['unstable_getStaticParam' + 's']
-    const getStaticProps = ComponentInfo['getStaticProp' + 's']
-    const getStaticPaths = ComponentInfo['getStaticPath' + 's']
-    const getServerSideProps = ComponentInfo['getServerSideProp' + 's']
-
-    // kept for detecting legacy exports
-    const unstable_getStaticProps = ComponentInfo['unstable_getStaticProp' + 's']
-    const unstable_getStaticPaths = ComponentInfo['unstable_getStaticPath' + 's']
-    const unstable_getServerProps = ComponentInfo['unstable_getServerProp' + 's']
-
-    
-    
-    
-    
-    const getCustomRouteMatcher = pathMatch(true)
-    const prepareDestination = __webpack_require__("6mnf").default
-
-    function handleRewrites(parsedUrl) {
-      for (const rewrite of rewrites) {
-        const matcher = getCustomRouteMatcher(rewrite.source)
-        const params = matcher(parsedUrl.pathname)
-
-        if (params) {
-          const { parsedDestination } = prepareDestination(
-            rewrite.destination,
-            params,
-            parsedUrl.query,
-            true,
-            ""
-          )
-
-          Object.assign(parsedUrl.query, parsedDestination.query)
-          delete parsedDestination.query
-
-          Object.assign(parsedUrl, parsedDestination)
-
-          if (parsedUrl.pathname === '/'){
-            break
-          }
-          
-        }
-      }
-
-      return parsedUrl
-    }
-  
-
-    const config = ComponentInfo['confi' + 'g'] || {}
-    const _app = App
-    async function renderReqToHTML(req, res, renderMode, _renderOpts, _params) {
-      const fromExport = renderMode === 'export' || renderMode === true;
-      const nextStartMode = renderMode === 'passthrough'
-
-      setLazyProp({ req }, 'cookies', getCookieParser(req))
-
-      const options = {
-        App,
-        Document,
-        buildManifest,
-        getStaticProps,
-        getServerSideProps,
-        getStaticPaths,
-        reactLoadableManifest,
-        canonicalBase: "",
-        buildId: "5oH9VvvOmpgw_r3bF6g8d",
-        assetPrefix: "",
-        runtimeConfig: runtimeConfig.publicRuntimeConfig || {},
-        previewProps: {previewModeId:"00027e5371cea21f2a5b3d275271ed3d",previewModeSigningKey:"320022602758b486bf8ed7437b22a2fad13051872a099cb636d8d99a59d6d109",previewModeEncryptionKey:"697748adbe7b563a13cfa9126534d7bde1dc45520e2846ce88b584b4835d85e4"},
-        env: process.env,
-        basePath: "",
-        ..._renderOpts
-      }
-      let _nextData = false
-      let parsedUrl
-
-      try {
-        // We need to trust the dynamic route params from the proxy
-        // to ensure we are using the correct values
-        const trustQuery = !getStaticProps && req.headers['x-vercel-id']
-        let parsedUrl = parseUrl(req.url, true)
-        let routeNoAssetPath = parsedUrl.pathname
-        const origQuery = Object.assign({}, parsedUrl.query)
-
-        parsedUrl = handleRewrites(parsedUrl)
-
-        
-
-        if (parsedUrl.pathname.match(/_next\/data/)) {
-          const {
-            default: getrouteNoAssetPath,
-          } = __webpack_require__("1Ej0");
-          _nextData = true;
-          parsedUrl.pathname = getrouteNoAssetPath(
-            parsedUrl.pathname.replace(
-              new RegExp('/_next/data/5oH9VvvOmpgw_r3bF6g8d/'),
-              '/'
-            ),
-            '.json'
-          );
-          routeNoAssetPath = parsedUrl.pathname
-        }
-
-        
-      const i18n = {}
-      const detectedLocale = undefined
-    
-
-        const renderOpts = Object.assign(
-          {
-            Component,
-            pageConfig: config,
-            nextExport: fromExport,
-            isDataReq: _nextData,
-            locale: detectedLocale,
-            locales: i18n.locales,
-            defaultLocale: i18n.defaultLocale,
-          },
-          options,
-        )
-
-        
-
-        const params = {};
-        const nowParams = null;
-
-        // make sure to set renderOpts to the correct params e.g. _params
-        // if provided from worker or params if we're parsing them here
-        renderOpts.params = _params || params
-
-        // make sure to normalize req.url on Vercel to strip dynamic params
-        // from the query which are added during routing
-        
-
-        // normalize request URL/asPath for fallback/revalidate pages since the
-        // proxy sets the request URL to the output's path for fallback pages
-        
-
-        // make sure to normalize asPath for revalidate and _next/data requests
-        // since the asPath should match what is shown on the client
-        if (
-          !fromExport &&
-          (getStaticProps || getServerSideProps)
-        ) {
-          
-
-          parsedUrl.pathname = denormalizePagePath(parsedUrl.pathname)
-          renderOpts.resolvedUrl = formatUrl({
-            ...parsedUrl,
-            query: origQuery
-          })
-
-          // For getServerSideProps we need to ensure we use the original URL
-          // and not the resolved URL to prevent a hydration mismatch on asPath
-          renderOpts.resolvedAsPath = getServerSideProps
-            ? formatUrl({
-              ...parsedUrl,
-              pathname: routeNoAssetPath,
-              query: origQuery,
-            })
-            : renderOpts.resolvedUrl
-        }
-
-        const isFallback = parsedUrl.query.__nextFallback
-
-        const previewData = tryGetPreviewData(req, res, options.previewProps)
-        const isPreviewMode = previewData !== false
-
-        if (false) {}
-        let result = await renderToHTML(req, res, "/", Object.assign({}, getStaticProps ? { ...(parsedUrl.query.amp ? { amp: '1' } : {}) } : parsedUrl.query, nowParams ? nowParams : params, _params, isFallback ? { __nextFallback: 'true' } : {}), renderOpts)
-
-        if (!renderMode) {
-          if (_nextData || getStaticProps || getServerSideProps) {
-            sendPayload(req, res, _nextData ? JSON.stringify(renderOpts.pageData) : result, _nextData ? 'json' : 'html', true, {
-              private: isPreviewMode,
-              stateful: !!getServerSideProps,
-              revalidate: renderOpts.revalidate,
-            })
-            return null
-          }
-        } else if (isPreviewMode) {
-          res.setHeader(
-            'Cache-Control',
-            'private, no-cache, no-store, max-age=0, must-revalidate'
-          )
-        }
-
-        if (renderMode) return { html: result, renderOpts }
-        return result
-      } catch (err) {
-        if (!parsedUrl) {
-          parsedUrl = parseUrl(req.url, true)
-        }
-
-        if (err.code === 'ENOENT') {
-          res.statusCode = 404
-        } else if (err.code === 'DECODE_FAILED') {
-          // TODO: better error?
-          res.statusCode = 400
-        } else {
-          console.error('Unhandled error during request:', err)
-
-          // Backwards compat (call getInitialProps in custom error):
-          try {
-            await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
-              getStaticProps: undefined,
-              getStaticPaths: undefined,
-              getServerSideProps: undefined,
-              Component: Error,
-              err: err,
-              // Short-circuit rendering:
-              isDataReq: true
-            }))
-          } catch (underErrorErr) {
-            console.error('Failed call /_error subroutine, continuing to crash function:', underErrorErr)
-          }
-
-          // Throw the error to crash the serverless function
-          if (isResSent(res)) {
-            console.error('!!! WARNING !!!')
-            console.error(
-              'Your function crashed, but closed the response before allowing the function to exit.\n' +
-              'This may cause unexpected behavior for the next request.'
-            )
-            console.error('!!! WARNING !!!')
-          }
-          throw err
-        }
-
-        const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
-          getStaticProps: undefined,
-          getStaticPaths: undefined,
-          getServerSideProps: undefined,
-          Component: Error,
-          err: res.statusCode === 404 ? undefined : err
-        }))
-        return result
-      }
-    }
-    async function render (req, res) {
-      try {
-        await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
-        const html = await renderReqToHTML(req, res)
-        if (html) {
-          sendPayload(req, res, html, 'html', {generateEtags: true, poweredByHeader: true})
-        }
-      } catch(err) {
-        console.error(err)
-        await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
-        // Throw the error to crash the serverless function
-        throw err
-      }
-    }
-  
-
-/***/ }),
-
 /***/ "LZ9C":
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"polyfillFiles\":[\"static/chunks/polyfills-11c8eba6a84e3fddec04.js\"],\"devFiles\":[],\"ampDevFiles\":[],\"lowPriorityFiles\":[\"static/5oH9VvvOmpgw_r3bF6g8d/_buildManifest.js\",\"static/5oH9VvvOmpgw_r3bF6g8d/_ssgManifest.js\"],\"pages\":{\"/\":[\"static/chunks/main-8a83f0fd99327c4684a8.js\",\"static/chunks/webpack-e067438c4cf4ef2ef178.js\",\"static/chunks/framework.ef157c678a62cfb2c073.js\",\"static/chunks/commons.c6a8bf6988d7f4eaa7c5.js\",\"static/chunks/2f7ac05545f8793df49baf496f0980023a56fb9e.d442831ace109f915bc9.js\",\"static/css/4e3c4d1c8db5e64a1cc9.css\",\"static/chunks/pages/index-05f55d5070970e60ab8b.js\"],\"/_app\":[\"static/chunks/main-8a83f0fd99327c4684a8.js\",\"static/chunks/webpack-e067438c4cf4ef2ef178.js\",\"static/chunks/framework.ef157c678a62cfb2c073.js\",\"static/chunks/commons.c6a8bf6988d7f4eaa7c5.js\",\"static/css/d849405d5d376284bb6c.css\",\"static/chunks/pages/_app-f25e7b8cf902775276fc.js\"],\"/_error\":[\"static/chunks/main-8a83f0fd99327c4684a8.js\",\"static/chunks/webpack-e067438c4cf4ef2ef178.js\",\"static/chunks/framework.ef157c678a62cfb2c073.js\",\"static/chunks/commons.c6a8bf6988d7f4eaa7c5.js\",\"static/chunks/pages/_error-4c0e59626af2fe2052a1.js\"],\"/us\":[\"static/chunks/main-8a83f0fd99327c4684a8.js\",\"static/chunks/webpack-e067438c4cf4ef2ef178.js\",\"static/chunks/framework.ef157c678a62cfb2c073.js\",\"static/chunks/commons.c6a8bf6988d7f4eaa7c5.js\",\"static/chunks/2f7ac05545f8793df49baf496f0980023a56fb9e.d442831ace109f915bc9.js\",\"static/css/4e3c4d1c8db5e64a1cc9.css\",\"static/chunks/pages/us-0826f7eed133f8c64c05.js\"]},\"ampFirstPages\":[]}");
+module.exports = JSON.parse("{\"polyfillFiles\":[\"static/chunks/polyfills-11c8eba6a84e3fddec04.js\"],\"devFiles\":[],\"ampDevFiles\":[],\"lowPriorityFiles\":[\"static/1VihkrN2kMURQ8sgUzGPJ/_buildManifest.js\",\"static/1VihkrN2kMURQ8sgUzGPJ/_ssgManifest.js\"],\"pages\":{\"/\":[\"static/chunks/main-3b2c4af7ee14fea01ffe.js\",\"static/chunks/webpack-e067438c4cf4ef2ef178.js\",\"static/chunks/framework.ef157c678a62cfb2c073.js\",\"static/chunks/commons.65db85aa1f84ff9c0177.js\",\"static/chunks/2f7ac05545f8793df49baf496f0980023a56fb9e.31284e9e89d22f605cb1.js\",\"static/css/4e3c4d1c8db5e64a1cc9.css\",\"static/chunks/pages/index-9fe58c692accea061e58.js\"],\"/_app\":[\"static/chunks/main-3b2c4af7ee14fea01ffe.js\",\"static/chunks/webpack-e067438c4cf4ef2ef178.js\",\"static/chunks/framework.ef157c678a62cfb2c073.js\",\"static/chunks/commons.65db85aa1f84ff9c0177.js\",\"static/css/d849405d5d376284bb6c.css\",\"static/chunks/pages/_app-f25e7b8cf902775276fc.js\"],\"/_error\":[\"static/chunks/main-3b2c4af7ee14fea01ffe.js\",\"static/chunks/webpack-e067438c4cf4ef2ef178.js\",\"static/chunks/framework.ef157c678a62cfb2c073.js\",\"static/chunks/commons.65db85aa1f84ff9c0177.js\",\"static/chunks/pages/_error-4c0e59626af2fe2052a1.js\"],\"/us\":[\"static/chunks/main-3b2c4af7ee14fea01ffe.js\",\"static/chunks/webpack-e067438c4cf4ef2ef178.js\",\"static/chunks/framework.ef157c678a62cfb2c073.js\",\"static/chunks/commons.65db85aa1f84ff9c0177.js\",\"static/chunks/2f7ac05545f8793df49baf496f0980023a56fb9e.31284e9e89d22f605cb1.js\",\"static/css/4e3c4d1c8db5e64a1cc9.css\",\"static/chunks/pages/us-0c4d09a272c3db4db99c.js\"]},\"ampFirstPages\":[]}");
 
 /***/ }),
 
@@ -2819,6 +2880,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _styles_Home_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("vRNQ");
 /* harmony import */ var _styles_Home_module_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_Home_module_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_error__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("eomm");
+/* harmony import */ var next_error__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_error__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
@@ -2828,9 +2891,18 @@ __webpack_require__.r(__webpack_exports__);
 
 const fetch = __webpack_require__("GXyi");
 
+ //import Error from './_error.js'
+
 function Home({
+  errorCode,
   data
 }) {
+  if (errorCode) {
+    return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_error__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      statusCode: errorCode
+    });
+  }
+
   return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
     className: _styles_Home_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.container,
     children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -2910,13 +2982,15 @@ function Home({
 }
 
 async function getServerSideProps() {
-  const aKey = process.env.API_KEY;
-  var url = 'https://newsapi.org/v2/top-headlines?' + 'country=in&' + aKey;
+  //const aKey = process.env.API_KEY;
+  var url = 'https://newsapi.org/v2/top-headlines?' + 'country=in&' + 'apiKey=fe9339f8c8e7402ea579273f9d8d0114';
   var req = new Request(url);
   const res = await fetch(req);
+  const errorCode = res.ok ? false : res.statusCode;
   let data = await res.json();
   return {
     props: {
+      errorCode,
       data: data.articles
     }
   };
@@ -3369,7 +3443,7 @@ function getOptionalModernScriptVariant(path) {
 
 function getDocumentFiles(buildManifest, pathname) {
   const sharedFiles = (0, _getPageFiles.getPageFiles)(buildManifest, '/_app');
-  const pageFiles = pathname !== '/_error' ? (0, _getPageFiles.getPageFiles)(buildManifest, pathname) : [];
+  const pageFiles = (0, _getPageFiles.getPageFiles)(buildManifest, pathname);
   return {
     sharedFiles,
     pageFiles,
@@ -4847,7 +4921,7 @@ function isModifiedEvent(event) {
   event.nativeEvent && event.nativeEvent.which === 2;
 }
 
-function linkClicked(e, router, href, as, replace, shallow, scroll) {
+function linkClicked(e, router, href, as, replace, shallow, scroll, locale) {
   const {
     nodeName
   } = e.currentTarget;
@@ -4865,7 +4939,8 @@ function linkClicked(e, router, href, as, replace, shallow, scroll) {
 
 
   router[replace ? 'replace' : 'push'](href, as, {
-    shallow
+    shallow,
+    locale
   }).then(success => {
     if (!success) return;
 
@@ -4914,7 +4989,8 @@ function Link(props) {
     children,
     replace,
     shallow,
-    scroll
+    scroll,
+    locale
   } = props; // Deprecated. Warning shown by propType check. If the children provided is a string (<Link>example</Link>) we wrap it in an <a> tag
 
   if (typeof children === 'string') {
@@ -4940,7 +5016,7 @@ function Link(props) {
       }
 
       if (!e.defaultPrevented) {
-        linkClicked(e, router, href, as, replace, shallow, scroll);
+        linkClicked(e, router, href, as, replace, shallow, scroll, locale);
       }
     }
   };
@@ -4962,7 +5038,7 @@ function Link(props) {
 
 
   if (props.passHref || child.type === 'a' && !('href' in child.props)) {
-    childProps.href = (0, _router.addBasePath)((0, _router.addLocale)(as, router && router.locale, router && router.defaultLocale));
+    childProps.href = (0, _router.addBasePath)((0, _router.addLocale)(as, typeof locale !== 'undefined' ? locale : router && router.locale, router && router.defaultLocale));
   }
 
   return /*#__PURE__*/_react.default.cloneElement(child, childProps);
@@ -5240,6 +5316,7 @@ function prepareUrlAs(router, url, as) {
 }
 
 const manualScrollRestoration =  false && false;
+const SSG_DATA_NOT_FOUND_ERROR = 'SSG Data NOT_FOUND';
 
 function fetchRetry(url, attempts) {
   return fetch(url, {
@@ -5259,6 +5336,12 @@ function fetchRetry(url, attempts) {
     if (!res.ok) {
       if (attempts > 1 && res.status >= 500) {
         return fetchRetry(url, attempts - 1);
+      }
+
+      if (res.status === 404) {
+        // TODO: handle reloading in development from fallback returning 200
+        // to on-demand-entry-handler causing it to reload periodically
+        throw new Error(SSG_DATA_NOT_FOUND_ERROR);
       }
 
       throw new Error(`Failed to load static props`);
@@ -5370,7 +5453,8 @@ class Router {
       }
 
       this.change('replaceState', url, as, Object.assign({}, options, {
-        shallow: options.shallow && this._shallow
+        shallow: options.shallow && this._shallow,
+        locale: options.locale || this.defaultLocale
       }));
     }; // represents the current component key
 
@@ -5472,6 +5556,8 @@ class Router {
       return false;
     }
 
+    if (false) {}
+
     if (!options._h) {
       this.isSsr = false;
     } // marking route changes as a navigation start entry
@@ -5485,7 +5571,7 @@ class Router {
       this.abortComponentLoad(this._inFlightRoute);
     }
 
-    as = addLocale(as, this.locale, this.defaultLocale);
+    as = addLocale(as, options.locale, this.defaultLocale);
     const cleanedAs = delLocale(hasBasePath(as) ? delBasePath(as) : as, this.locale);
     this._inFlightRoute = as; // If the url change is only related to a hash change
     // We should not proceed. We should only change the state.
@@ -5597,7 +5683,7 @@ class Router {
           this._resolveHref(parsedHref, pages);
 
           if (pages.includes(parsedHref.pathname)) {
-            return this.change('replaceState', destination, destination, options);
+            return this.change(method, destination, destination, options);
           }
         }
 
@@ -5606,7 +5692,7 @@ class Router {
       }
 
       Router.events.emit('beforeHistoryChange', as);
-      this.changeState(method, url, addLocale(as, this.locale, this.defaultLocale), options);
+      this.changeState(method, url, addLocale(as, options.locale, this.defaultLocale), options);
 
       if (false) {}
 
@@ -5669,26 +5755,55 @@ class Router {
     }
 
     try {
-      const {
-        page: Component,
-        styleSheets
-      } = await this.fetchComponent('/_error');
+      let Component;
+      let styleSheets;
+      let props;
+      const ssg404 = err.message === SSG_DATA_NOT_FOUND_ERROR;
+
+      if (ssg404) {
+        try {
+          let mod;
+          ({
+            page: Component,
+            styleSheets,
+            mod
+          } = await this.fetchComponent('/404')); // TODO: should we tolerate these props missing and still render the
+          // page instead of falling back to _error?
+
+          if (mod && mod.__N_SSG) {
+            props = await this._getStaticData(this.pageLoader.getDataHref('/404', '/404', true, this.locale));
+          }
+        } catch (_err) {// non-fatal fallback to _error
+        }
+      }
+
+      if (typeof Component === 'undefined' || typeof styleSheets === 'undefined') {
+        ;
+        ({
+          page: Component,
+          styleSheets
+        } = await this.fetchComponent('/_error'));
+      }
+
       const routeInfo = {
+        props,
         Component,
         styleSheets,
-        err,
-        error: err
+        err: ssg404 ? undefined : err,
+        error: ssg404 ? undefined : err
       };
 
-      try {
-        routeInfo.props = await this.getInitialProps(Component, {
-          err,
-          pathname,
-          query
-        });
-      } catch (gipErr) {
-        console.error('Error in error page `getInitialProps`: ', gipErr);
-        routeInfo.props = {};
+      if (!routeInfo.props) {
+        try {
+          routeInfo.props = await this.getInitialProps(Component, {
+            err,
+            pathname,
+            query
+          });
+        } catch (gipErr) {
+          console.error('Error in error page `getInitialProps`: ', gipErr);
+          routeInfo.props = {};
+        }
       }
 
       return routeInfo;
@@ -5725,7 +5840,7 @@ class Router {
         dataHref = this.pageLoader.getDataHref((0, _utils.formatWithValidation)({
           pathname,
           query
-        }), delBasePath(as), __N_SSG, this.locale, this.defaultLocale);
+        }), delBasePath(as), __N_SSG, this.locale);
       }
 
       const props = await this._getData(() => __N_SSG ? this._getStaticData(dataHref) : __N_SSP ? this._getServerData(dataHref) : this.getInitialProps(Component, // we provide AppTree later so this needs to be `any`
@@ -5960,11 +6075,19 @@ Router.events = (0, _mitt.default)();
 
 /***/ }),
 
+/***/ "eomm":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("/a9y")
+
+
+/***/ }),
+
 /***/ "f/k9":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v1.4.1
+/** @license React v1.5.0
  * use-subscription.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -5972,7 +6095,6 @@ Router.events = (0, _mitt.default)();
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-
 var e=__webpack_require__("MgzW"),g=__webpack_require__("q1tI");
 exports.useSubscription=function(a){var c=a.getCurrentValue,d=a.subscribe,b=g.useState(function(){return{getCurrentValue:c,subscribe:d,value:c()}});a=b[0];var f=b[1];b=a.value;if(a.getCurrentValue!==c||a.subscribe!==d)b=c(),f({getCurrentValue:c,subscribe:d,value:b});g.useDebugValue(b);g.useEffect(function(){function b(){if(!a){var b=c();f(function(a){return a.getCurrentValue!==c||a.subscribe!==d||a.value===b?a:e({},a,{value:b})})}}var a=!1,h=d(b);b();return function(){a=!0;h()}},[c,d]);return b};
 
@@ -8149,7 +8271,7 @@ const resolvedPage=_path.posix.normalize(page);if(page!==resolvedPage){throw new
 
 
 exports.__esModule = true;
-exports.OPTIMIZED_FONT_PROVIDERS = exports.SERVER_PROPS_ID = exports.STATIC_PROPS_ID = exports.PERMANENT_REDIRECT_STATUS = exports.TEMPORARY_REDIRECT_STATUS = exports.CLIENT_STATIC_FILES_RUNTIME_POLYFILLS = exports.CLIENT_STATIC_FILES_RUNTIME_WEBPACK = exports.CLIENT_STATIC_FILES_RUNTIME_AMP = exports.CLIENT_STATIC_FILES_RUNTIME_REACT_REFRESH = exports.CLIENT_STATIC_FILES_RUNTIME_MAIN = exports.STRING_LITERAL_DROP_BUNDLE = exports.AMP_RENDER_TARGET = exports.CLIENT_STATIC_FILES_RUNTIME = exports.CLIENT_STATIC_FILES_PATH = exports.CLIENT_PUBLIC_FILES_PATH = exports.BLOCKED_PAGES = exports.BUILD_ID_FILE = exports.CONFIG_FILE = exports.SERVERLESS_DIRECTORY = exports.SERVER_DIRECTORY = exports.FONT_MANIFEST = exports.REACT_LOADABLE_MANIFEST = exports.DEV_CLIENT_PAGES_MANIFEST = exports.ROUTES_MANIFEST = exports.PRERENDER_MANIFEST = exports.EXPORT_DETAIL = exports.EXPORT_MARKER = exports.BUILD_MANIFEST = exports.PAGES_MANIFEST = exports.PHASE_DEVELOPMENT_SERVER = exports.PHASE_PRODUCTION_SERVER = exports.PHASE_PRODUCTION_BUILD = exports.PHASE_EXPORT = void 0;
+exports.OPTIMIZED_FONT_PROVIDERS = exports.SERVER_PROPS_ID = exports.STATIC_PROPS_ID = exports.PERMANENT_REDIRECT_STATUS = exports.TEMPORARY_REDIRECT_STATUS = exports.CLIENT_STATIC_FILES_RUNTIME_POLYFILLS = exports.CLIENT_STATIC_FILES_RUNTIME_WEBPACK = exports.CLIENT_STATIC_FILES_RUNTIME_AMP = exports.CLIENT_STATIC_FILES_RUNTIME_REACT_REFRESH = exports.CLIENT_STATIC_FILES_RUNTIME_MAIN = exports.STRING_LITERAL_DROP_BUNDLE = exports.AMP_RENDER_TARGET = exports.CLIENT_STATIC_FILES_RUNTIME = exports.CLIENT_STATIC_FILES_PATH = exports.CLIENT_PUBLIC_FILES_PATH = exports.BLOCKED_PAGES = exports.BUILD_ID_FILE = exports.CONFIG_FILE = exports.SERVERLESS_DIRECTORY = exports.SERVER_DIRECTORY = exports.FONT_MANIFEST = exports.REACT_LOADABLE_MANIFEST = exports.DEV_CLIENT_PAGES_MANIFEST = exports.IMAGES_MANIFEST = exports.ROUTES_MANIFEST = exports.PRERENDER_MANIFEST = exports.EXPORT_DETAIL = exports.EXPORT_MARKER = exports.BUILD_MANIFEST = exports.PAGES_MANIFEST = exports.PHASE_DEVELOPMENT_SERVER = exports.PHASE_PRODUCTION_SERVER = exports.PHASE_PRODUCTION_BUILD = exports.PHASE_EXPORT = void 0;
 const PHASE_EXPORT = 'phase-export';
 exports.PHASE_EXPORT = PHASE_EXPORT;
 const PHASE_PRODUCTION_BUILD = 'phase-production-build';
@@ -8170,6 +8292,8 @@ const PRERENDER_MANIFEST = 'prerender-manifest.json';
 exports.PRERENDER_MANIFEST = PRERENDER_MANIFEST;
 const ROUTES_MANIFEST = 'routes-manifest.json';
 exports.ROUTES_MANIFEST = ROUTES_MANIFEST;
+const IMAGES_MANIFEST = 'images-manifest.json';
+exports.IMAGES_MANIFEST = IMAGES_MANIFEST;
 const DEV_CLIENT_PAGES_MANIFEST = '_devPagesManifest.json';
 exports.DEV_CLIENT_PAGES_MANIFEST = DEV_CLIENT_PAGES_MANIFEST;
 const REACT_LOADABLE_MANIFEST = 'react-loadable-manifest.json';

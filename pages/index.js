@@ -3,8 +3,13 @@ import Link from 'next/link'
 import React, {Fragment} from 'react'
 import styles from '../styles/Home.module.css'
 const fetch = require('isomorphic-unfetch')
+import Error from 'next/error'
+//import Error from './_error.js'
 
-function Home({data}) {
+function Home({errorCode, data}) {
+  if (errorCode) {
+    return <Error statusCode={errorCode} />
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -36,7 +41,6 @@ function Home({data}) {
         </div>
         <div className={styles.grid}>
 
-        
             {data.map(({publishedAt, title, urlToImage, url,description}) => (
               <React.Fragment key={publishedAt} >
                 <a href={url} target="_blank" className={styles.card}>
@@ -45,10 +49,10 @@ function Home({data}) {
             <p>{description}</p> </a>
             <br/>
               </React.Fragment>
-              
+          ))
+            }
 
-          ))}
-
+          
           
 
           
@@ -67,18 +71,22 @@ function Home({data}) {
 }
 
 export async function getServerSideProps() {
-  const aKey = process.env.API_KEY;
+  
+    //const aKey = process.env.API_KEY;
   var url = 'https://newsapi.org/v2/top-headlines?' +
-  'country=in&' + aKey;
+  'country=in&' + 'apiKey=fe9339f8c8e7402ea579273f9d8d0114';
 
+  
 var req = new Request(url);
   const res = await fetch(req)
+  const errorCode = res.ok ? false : res.statusCode
   let data = await res.json();
   return {
     props: {
+      errorCode,
       data: data.articles,
     },
-  }
-      
+  } 
+    
 }
-export default Home;
+export default Home
