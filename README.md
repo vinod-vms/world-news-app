@@ -18,7 +18,7 @@ Run 'yarn dev' to start the development server
 Navigate to localhost:3000 on the browser
 
 #### Hosting
-This site is hosted here: https://world-news.netlify.app
+This app is hosted here: https://world-news.netlify.app
 
 #### License
 MIT &copy; Vinod Mathew Sebastian
