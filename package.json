@@ -1,7 +1,8 @@
 {
   "name": "world-news",
-  "version": "0.1.0",
-  "private": true,
+  "version": "2.0.0",
+  "private": false,
+  "author" : "Vinod Mathew Sebastian",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
