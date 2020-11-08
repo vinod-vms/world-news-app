@@ -62,6 +62,7 @@
   .card {
     display:flex;
     flex-direction:column;
+    width:90%;
     margin: 1rem;
     flex-basis: 85%;
     overflow:hidden;
@@ -114,7 +115,9 @@
     {   height:50px;
         width:120px;
     }
-
+.card {
+    width:95%;
+}
     .card h3 {
         font-size: 1rem;
       }
