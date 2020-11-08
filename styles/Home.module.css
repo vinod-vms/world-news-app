@@ -125,17 +125,9 @@
         width:120px;
     }
 .card {
-    max-width:95%;
+    max-width:90%;
 }
-    .card h3 {
-        font-size: 1rem;
-      }
-      
-      .card p {
-
-        font-size: 1rem;
-        line-height: 1.35;
-      }
+    
     .cardImg {
         height:315px;
     }
