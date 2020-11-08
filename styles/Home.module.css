@@ -116,12 +116,12 @@
     }
 
     .card h3 {
-        font-size: 1.35rem;
+        font-size: 1rem;
       }
       
       .card p {
-        margin: 0;
-        font-size: 1.1rem;
+
+        font-size: 1rem;
         line-height: 1.35;
       }
     .cardImg {
