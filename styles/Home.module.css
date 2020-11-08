@@ -124,10 +124,18 @@
     {   height:50px;
         width:120px;
     }
-.card {
-    max-width:90%;
-}
+    .card {
+        max-width: 80%;
+    }
+    .card h3 {
+        font-size: 1rem;
+      }
+      
+      .card p {
     
+        font-size: 1rem;
+        line-height: 1.5;
+      }
     .cardImg {
         height:315px;
     }
