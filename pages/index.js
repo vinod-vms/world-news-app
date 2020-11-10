@@ -44,7 +44,10 @@ function Home({errorCode, data}) {
             {data.map(({publishedAt, title, urlToImage, url,description}) => (
               <React.Fragment key={publishedAt} >
                 <a href={url} target="_blank" className={styles.card}>
-                <img src={urlToImage} className={styles.cardImg}/>
+                  
+                <img src={urlToImage} height="294" className={styles.cardImg}/>
+                
+                <br/>
               <h4>  {title} </h4>
             <p>{description}</p> </a>
             <br/>
@@ -72,9 +75,9 @@ function Home({errorCode, data}) {
 
 export async function getServerSideProps() {
   
-    const aKey = process.env.API_KEY;
+    //const aKey = process.env.API_KEY;
   var url = 'https://newsapi.org/v2/top-headlines?' +
-  'country=in&' + aKey;
+  'country=in&' + 'apiKey=fe9339f8c8e7402ea579273f9d8d0114';
   
 var req = new Request(url);
   const res = await fetch(req)
