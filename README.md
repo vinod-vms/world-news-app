@@ -3,7 +3,7 @@ A website for aggregating news in real time.
 
 #### How to use
 
-You need an API key for the app to work. Get that from https://newsapi.org 
+You need an API key for the app to work. Get one from https://newsapi.org 
 
 After cloning this repository, create a .env file in the root directory and add the following line
 
