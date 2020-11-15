@@ -7,7 +7,6 @@ import Error from "next/error";
 //import Error from './_error.js'
 
 function Home({ errorCode, data }) {
-  console.log(process.env.API_KEY);
   if (errorCode) {
     return <Error statusCode={errorCode} />;
   }
@@ -79,7 +78,7 @@ function Home({ errorCode, data }) {
 
 export async function getServerSideProps() {
   const aKey = process.env.API_KEY;
-  console.log(process.env.API_KEY, aKey);
+
   var url =
     "https://newsapi.org/v2/top-headlines?" + "country=in&" + "apiKey=" + aKey;
 
@@ -87,7 +86,7 @@ export async function getServerSideProps() {
   const res = await fetch(req);
   const errorCode = res.ok ? false : res.statusCode;
   let data = await res.json();
-  console.log("dataaaa", data);
+
   return {
     props: {
       errorCode,
