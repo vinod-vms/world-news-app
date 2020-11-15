@@ -35,17 +35,23 @@ function Home({ errorCode, data }) {
           </div>
         </div>
         <div className={styles.grid}>
-          {[].map(({ publishedAt, title, urlToImage, url, description }) => (
-            <React.Fragment key={publishedAt}>
-              <a href={url} target="_blank" className={styles.card}>
-                <img src={urlToImage} height="294" className={styles.cardImg} />
+          {(data || []).map(
+            ({ publishedAt, title, urlToImage, url, description }) => (
+              <React.Fragment key={publishedAt}>
+                <a href={url} target="_blank" className={styles.card}>
+                  <img
+                    src={urlToImage}
+                    height="294"
+                    className={styles.cardImg}
+                  />
+                  <br />
+                  <h4> {title} </h4>
+                  <p>{description}</p>{" "}
+                </a>
                 <br />
-                <h4> {title} </h4>
-                <p>{description}</p>{" "}
-              </a>
-              <br />
-            </React.Fragment>
-          ))}
+              </React.Fragment>
+            )
+          )}
         </div>
       </main>
 
@@ -72,7 +78,8 @@ function Home({ errorCode, data }) {
 
 export async function getServerSideProps() {
   const aKey = process.env.API_KEY;
-  var url = "https://newsapi.org/v2/top-headlines?" + "country=us&" + aKey;
+  var url =
+    "https://newsapi.org/v2/top-headlines?" + "country=us&" + "apiKey=" + aKey;
 
   var req = new Request(url);
   const res = await fetch(req);
