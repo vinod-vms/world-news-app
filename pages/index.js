@@ -36,7 +36,7 @@ function Home({ errorCode, data }) {
           </div>
         </div>
         <div className={styles.grid}>
-          {data.map(({ publishedAt, title, urlToImage, url, description }) => (
+          {[].map(({ publishedAt, title, urlToImage, url, description }) => (
             <React.Fragment key={publishedAt}>
               <a href={url} target="_blank" className={styles.card}>
                 <img src={urlToImage} height="294" className={styles.cardImg} />
