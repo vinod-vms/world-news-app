@@ -78,7 +78,7 @@ export async function getServerSideProps() {
   
   const aKey = process.env.API_KEY;
   var url = 'https://newsapi.org/v2/top-headlines?' +
-  'country=us&' + aKey ;
+  'country=us&' + 'apiKey=' + aKey ;
   
 var req = new Request(url);
   const res = await fetch(req)
