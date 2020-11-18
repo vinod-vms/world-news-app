@@ -4,6 +4,7 @@ import React, {Fragment} from 'react'
 import styles from '../styles/Home.module.css'
 const fetch = require('isomorphic-unfetch')
 import Error from 'next/error'
+//import handler from './api/hello.js'
 //import Error from './_error.js'
 
 
@@ -75,7 +76,7 @@ function Home({errorCode, data}) {
 
 export async function getServerSideProps() {
   
-    const aKey = process.env.API_KEY;
+  const aKey = process.env.API_KEY;
   var url = 'https://newsapi.org/v2/top-headlines?' +
   'country=us&' + aKey ;
   

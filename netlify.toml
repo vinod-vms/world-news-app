@@ -2,5 +2,3 @@
   command   = " node -p 'process.env' && yarn run build"
   functions = "out_functions"
   publish   = "out_publish"
-[[plugins]]
-package = "netlify-plugin-inline-functions-env"
