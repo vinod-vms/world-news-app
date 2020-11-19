@@ -2,8 +2,6 @@
 
 # dependencies
 /node_modules
-/out_functions
-/out_publish
 /.pnp
 .pnp.js
 
@@ -34,7 +32,8 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
-
+/out_publish/
+/out_functions/
 # vercel
 .vercel
 
